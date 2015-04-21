@@ -25,6 +25,10 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 		last.next = tmp;
 		last = tmp;
 	}
+	
+	private void siftUp(NodeHeap<V> node){
+		
+	}
 
 	@Override
 	public V[] toArray(V[] array) {
@@ -35,6 +39,10 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 	@Override
 	public void remove(V value) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	private void siftDown(NodeHeap<V> node){
 		
 	}
 
