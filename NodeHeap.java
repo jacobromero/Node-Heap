@@ -4,9 +4,9 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 	V data;
 	NodeHeap<V> next;
 	//TODO remove static from next to vars.
-	public static NodeHeap head = null;
-	private static NodeHeap last = null;
-	private int size = 0;
+	public NodeHeap head = null;
+	private NodeHeap last = null;
+	private int listSize = 0;
 		
 	public NodeHeap(V d){
 		data = d;
@@ -46,8 +46,16 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 
 	@Override
 	public V[] toArray(V[] array) {
-		// TODO Auto-generated method stub
-		return null;
+		int counter = 0;
+		
+		NodeHeap<V> tmp = head;
+		V[] array = new array[listSize];
+		
+		while(tmp != null){
+			array[i] = tmp.data;
+			i++;
+		}
+		return array;
 	}
 
 	@Override
@@ -62,14 +70,15 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 
 	@Override
 	public void fromArray(V[] array) {
-		// TODO Auto-generated method stub
+		for(int i = 0; i > array.size(); i++){
+			add(array[i]);
+		}
 		
 	}
 
 	@Override
 	public V[] getSortedContents(V[] array) {
-		// TODO Auto-generated method stub
-		return null;
+		this.toArray()
 	}
 	
 	public int compareTo(V o) {
