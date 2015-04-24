@@ -16,10 +16,23 @@
 
 package edu.csupomona.cs.cs241.prog_assgmnt_1;
 
-public interface Heap <V extends Comparable<V>>{
-	public void add(V value);
-	public V[] toArray();
-	public V remove();
-	public void fromArray(V[] array);
-	public V[] getSortedContents();
+public class PriorityQueue<V extends Comparable<V>> {
+	NodeHeap<V> maxHeap = new NodeHeap<V>();
+	
+	public void enqueue(V item){
+		maxHeap.add(item);
+	}
+	
+	public V dequeue(){
+		return maxHeap.remove();
+	}
+	
+	public V peek(){
+		V[] array = maxHeap.toArray();		
+		return array[0];
+	}
+	
+	public int size(){
+		return maxHeap.heapSize;
+	}
 }

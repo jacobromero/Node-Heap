@@ -1,33 +1,23 @@
-package edu.csupomona.cs.cs241.prog_assgmnt_1;
+/**
+ * CS 241: Data Structures and Algorithms II
+ * Professor: Edwin Rodr&iacute;guez
+ *
+ * Programming Assignment #1
+ *
+ * A linked list implementation of a max heap,
+ * maintaining the same run-time complexities as its
+ * array counter part.
+ * A restaurant app is used to demonstrate using a heap
+ * as a priority queue.
+ * 
+ * Jacob Romero
+ * 
+ */
 
-//TODO create customer class
-//TODO implement priority queue
+package edu.csupomona.cs.cs241.prog_assgmnt_1;
 
 public class MainApp {
 	public static void main(String[] args){
-		NodeHeap<Integer> test = new NodeHeap<Integer>();
-		test.add(10);
-		test.add(40);
-		
-		Integer[] array = {5, 60, 3, 0, 95};
-		test.fromArray(array);
-		System.out.println(test);
-		
-		test.remove();
-		System.out.println(test);
-		test.remove();
-		test.remove();
-		System.out.println(test);
-		
-		for(int i = 0; i < array.length; i++){
-			System.out.print(array[i] + " ");
-		}
-		
-		System.out.println();
-		
-		array = test.getSortedContents(array);
-		for(int i = 0; i < array.length; i++){
-			System.out.print(array[i] + " ");
-		}
+		RestuantQueue.startApp();
 	}
 }
