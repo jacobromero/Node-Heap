@@ -145,7 +145,7 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 		}
 		
 		siftDown(newRoot);
-		
+		heapSize--;
 		return tmp.value;
 		
 	}
