@@ -18,36 +18,49 @@ package edu.csupomona.cs.cs241.prog_assgmnt_1;
 
 import java.util.Scanner;
 
+//TODO validate input
 public class RestuantQueue {
 	private static PriorityQueue<Customer> queue = new PriorityQueue<Customer>();
 	private static Scanner kb = new Scanner(System.in);
-	public static void startApp() {	
-		int userInput;
-		
+	public static void startApp() {		
 		System.out.println("Thanks for using QueueMaster-3000");
-		do{
-			printUI();
-			userInput = kb.nextInt();
-			kb.nextLine();
-			calcInput(userInput);
-		}while(userInput != 4);	
+		printMenu();
 	}
 	
+	private static void printMenu() {
+		try{
+			int userInput = 0;
+		
+			do{
+				printUI();
+				userInput = kb.nextInt();
+			
+				kb.nextLine();
+				calcInput(userInput);
+			}while(userInput != 4);	
+		}
+		catch(Exception e){
+			System.out.println("\n\noops something went wrong, try again.\n");
+			kb.nextLine();
+			printMenu();
+		}
+	}
+
 	private static void calcInput(int input) {
-		if(input == 1){
-			addCustomer();
-		}
-		else if(input == 2){
-			removeCustomer();
-		}
-		else if(input == 3){
-			peekCustomer();
-		}
-		else if(input == 4){
-			System.out.println("Now Exiting... Have a Nice day!");
-		}
-		else
-			System.out.println("UNRECOGNIZED COMMAND. Please try again.");	
+			if(input == 1){
+				addCustomer();
+			}
+			else if(input == 2){
+				removeCustomer();
+			}
+			else if(input == 3){
+				peekCustomer();
+			}
+			else if(input == 4){
+				System.out.println("Now Exiting... Have a Nice day!");
+			}
+			else
+				System.out.println("UNRECOGNIZED COMMAND. Please try again.");
 	}
 
 	private static void addCustomer(){

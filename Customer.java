@@ -16,6 +16,11 @@
 
 package edu.csupomona.cs.cs241.prog_assgmnt_1;
 
+/**
+ * 
+ * @author Jacob Romero
+ *
+ */
 public class Customer implements Comparable<Customer>{
 	protected String groupName;
 	protected boolean hasVip = false;
