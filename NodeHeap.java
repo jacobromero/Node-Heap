@@ -163,10 +163,9 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 			
 			parent = swap(parent, swapNode);
 		}
-//		System.out.println(root.value);
 	}
 
-	public Node getRemovePos(){
+	private Node getRemovePos(){
 		ArrayList<Node> queue = new ArrayList<Node>();
 		queue.add(root);
 		Node currentNode = root;
@@ -179,10 +178,6 @@ public class NodeHeap<V extends Comparable<V>> implements Heap<V> {
 		}
 
 		return currentNode;
-	}
-	
-	public int siftDown(V value, int index){
-		return 0;
 	}
 	
 	//REDO
